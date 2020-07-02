@@ -41,9 +41,9 @@ export default {
         },
         {
           id: 2,
-          url: "/organ",
+          url: "/xianHome",
           icon: "el-icon-share",
-          title: "common.organizationName"
+          title: "common.xianHomeName"
         },
         {
           id: 3,

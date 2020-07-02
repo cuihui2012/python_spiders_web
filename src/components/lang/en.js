@@ -25,7 +25,7 @@ const en = {
         tip:'Prompt',
         operate:'Operation',
         hotSpotsName:'Hot Spots Data',
-        organizationName:'Group Managemengt',
+        xianHomeName:'Xi\'an Home Data',
         roleManageName:'Roles Managemengt',
         operatorManageName:'User Managemengt',
         deviceManageName:'Terminal Managemengt',

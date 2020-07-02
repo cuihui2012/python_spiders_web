@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import login from '@/views/Login.vue'
 import home from '@/views/Home.vue'
 import hotSpots from '@/views/HotSpots.vue'
-import organ from '@/views/Organ.vue'
+import xianHome from '@/views/XianHome.vue'
 import role from '@/views/Role.vue'
 import tag from '@/views/Tag.vue'
 import task from '@/views/Task.vue'
@@ -22,7 +22,7 @@ Vue.use(VueRouter)
       component: home,
       children: [
         {path: '/hotSpots',name: 'hotSpots',component: hotSpots},
-        {path: '/organ',name: 'organ',component: organ},
+        {path: '/xianHome',name: 'xianHome',component: xianHome},
         {path: '/role',name: 'role',component: role},
         {path: '/tag',name: 'tag',component: tag},
         {path: '/task',name: 'task',component: task},

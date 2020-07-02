@@ -25,7 +25,7 @@ const cn = {
         tip:'提示',
         operate:'操作',
         hotSpotsName:'热门景点数据',
-        organizationName:'机构管理',
+        xianHomeName:'西安城南小区监控',
         roleManageName:'角色管理',
         operatorManageName:'用户管理',
         deviceManageName:'终端管理',
