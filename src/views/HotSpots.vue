@@ -3,7 +3,10 @@
     <!-- 搜索框开始 -->
     <el-input placeholder="请输入要游玩的城市" v-model="input" clearable class="_input"></el-input>
     <el-button type="primary" icon="el-icon-search" id="search" @click="drawLine">搜索</el-button>
-    <em class="mark">数据来源：<a href="https://www.mafengwo.cn/" target="blank">马蜂窝</a>（取前二十页数据，展示前十条热门评论数据，免登录直接爬取）</em>
+    <em class="mark">
+      数据来源：
+      <a href="https://www.mafengwo.cn/" target="blank">马蜂窝</a>（取前二十页数据，展示前十条热门评论数据）
+    </em>
     <el-divider content-position="left"></el-divider>
     <!-- 搜索框结束 -->
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
@@ -136,7 +139,9 @@ export default {
       let city = this.input;
       console.log(city);
       if (!city) {
-        alert("城市必填!");
+        this.$alert("城市必填", "提示", {
+          confirmButtonText: "确定"
+        });
         return;
       }
       // 表设置标题
@@ -147,7 +152,7 @@ export default {
       });
       //数据加载完之前先显示一段简单的loading动画
       myChart.showLoading();
-      // 
+      //
       // let _this = this;
       // 发送请求
       await this.$axios
@@ -155,7 +160,9 @@ export default {
         .then(response => (this.results = response.data))
         .catch(function(error) {
           // 请求失败处理
-          alert("图表请求数据失败!");
+          this.$alert("图表请求数据失败", "提示", {
+            confirmButtonText: "确定"
+          });
           myChart.hideLoading();
         });
       //请求成功时执行该函数内容，result即为服务器返回的json对象
@@ -199,7 +206,6 @@ export default {
           }
         });
       }
-
     },
     getTable(results) {
       // 生成表头

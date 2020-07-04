@@ -5,9 +5,10 @@
       <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
     </el-select>
     <el-button type="primary" icon="el-icon-search" id="search" @click="drawLine">搜索</el-button>
+    <el-button type="primary" :loading="flag" @click="get_new_data">获取最新数据</el-button>
     <em class="mark">
       数据来源：
-      <a href="https://xa.xinfang.anjuke.com/lou/chengnan/a1_w1/" target="blank">安居客</a>（监控西安-城南-住宅-在售小区，免登录直接爬取）
+      <a href="https://xa.xinfang.anjuke.com/lou/chengnan/a1_w1/" target="blank">安居客</a>（西安-城南-住宅-在售小区，分析Top10时间节点价格趋势）
     </em>
     <el-divider content-position="left"></el-divider>
     <!-- 搜索框结束 -->
@@ -19,6 +20,7 @@
 export default {
   data() {
     return {
+      flag: false,
       options: [],
       value: ""
     };
@@ -40,24 +42,59 @@ export default {
         .then(response => (results = response.data))
         .catch(function(error) {
           // 请求失败处理
-          alert("请求列表数据失败!");
+          this.$alert("请求列表数据失败", "提示", {
+            confirmButtonText: "确定"
+          });
         });
-      results.forEach(result => {
-        this.options.push({
-          value: result,
-          label: result
+      if (results.length > 0) {
+        this.options = [];
+        results.forEach(result => {
+          this.options.push({
+            value: result,
+            label: result
+          });
         });
-      });
-      // 设置默认值,默认绘图
-      this.value = this.options[0]["value"];
-      this.drawLine();
+        // 设置默认值,默认绘图
+        this.value = this.options[0]["value"];
+        this.drawLine();
+      }
+    },
+    async get_new_data() {
+      this.flag = true;
+      var results = "";
+      // 发送请求
+      await this.$axios
+        .get("/get_new_data")
+        .then(response => (results = response.data))
+        .catch(function(error) {
+          // 请求失败处理
+          this.flag = false;
+          this.$alert("获取最新数据失败", "提示", {
+            confirmButtonText: "确定"
+          });
+        });
+      if (results == "1") {
+        this.flag = false;
+        this.$alert("获取最新数据成功", "提示", {
+          confirmButtonText: "确定"
+        });
+        // 获取成功后重新加载数据
+        this.get_datas_lists();
+      } else {
+        this.flag = false;
+        this.$alert("获取最新数据失败", "提示", {
+          confirmButtonText: "确定"
+        });
+      }
     },
     async drawLine() {
       let myChart = this.$echarts.init(this.$("#main")[0]);
       // 获取搜索框中城市
       let xiaoqu = this.value;
       if (!xiaoqu) {
-        alert("请选择一个小区!");
+        this.$alert("请选择一个小区", "提示", {
+          confirmButtonText: "确定"
+        });
         return;
       }
       //数据加载完之前先显示一段简单的loading动画
@@ -69,7 +106,9 @@ export default {
         .then(response => (results = response.data))
         .catch(function(error) {
           // 请求失败处理
-          alert("图表请求数据失败!");
+          this.$alert("图表请求数据失败", "提示", {
+            confirmButtonText: "确定"
+          });
           myChart.hideLoading();
         });
       var times = [];
