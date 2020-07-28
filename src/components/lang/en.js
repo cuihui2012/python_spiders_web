@@ -2,7 +2,7 @@
 import enLocale from 'element-ui/lib/locale/lang/en'
 const en = {
     common: {
-        managerTitle: "Spider Manage System",
+        managerTitle: "All Things Crawling",
         loginEmailLabel:'User',
         loginPasswordLabel:'Password',
         changePassword: "Change Password",
@@ -26,11 +26,11 @@ const en = {
         operate:'Operation',
         hotSpotsName:'Hot Spots Data',
         xianHomeName:'Xi\'an Home Data',
-        roleManageName:'LanZhou Employ Data',
-        operatorManageName:'building',
-        deviceManageName:'building',
-        AppManegeName:'building',
-        TaskManageName:'building',
+        employName:'LanZhou Employ Data',
+        schedulerManageName:'Scheduler Job Manage',
+        examName:'LanZhou RST Exam Data',
+        AppManegeName:'< extending >',
+        LogName:'developing log',
         tableLimitAllocate:'Allocation',
         tableAddBtn:'Add',
         tableUpdateBtn:'Edit',

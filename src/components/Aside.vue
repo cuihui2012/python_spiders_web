@@ -1,7 +1,7 @@
 <template>
   <el-aside width="226px" class="aside">
     <p class="logo">
-      <i class="el-icon-platform-eleme" style="color: rgb(48, 64, 149);margin-right: 5px;"></i>爬虫数据一览
+      <i class="el-icon-platform-eleme" style="color: rgb(48, 64, 149);margin-right: 5px;"></i>万物皆可爬
     </p>
     <el-menu
       router
@@ -47,33 +47,33 @@ export default {
         },
         {
           id: 3,
-          url: "/role",
+          url: "/employ",
           icon: "el-icon-pie-chart",
-          title: "common.roleManageName"
+          title: "common.employName"
         },
         {
           id: 4,
-          url: "/user",
-          icon: "el-icon-user",
-          title: "common.operatorManageName"
+          url: "/exam",
+          icon: "el-icon-s-platform",
+          title: "common.examName"
         },
         {
           id: 5,
-          url: "/tag",
-          icon: "el-icon-s-platform",
-          title: "common.deviceManageName"
-        },
-        {
-          id: 6,
           url: "/use",
           icon: "el-icon-menu",
           title: "common.AppManegeName"
         },
         {
+          id: 6,
+          url: "/scheduler",
+          icon: "el-icon-user",
+          title: "common.schedulerManageName"
+        },
+        {
           id: 7,
-          url: "/task",
+          url: "/log",
           icon: "el-icon-tickets",
-          title: "common.TaskManageName"
+          title: "common.LogName"
         }
       ],
       navTitle: ""

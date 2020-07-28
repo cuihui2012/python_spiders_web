@@ -3,7 +3,7 @@
     <div class="bg">
       <div class="login-lay">
         <h2 class="login-hd">
-          <i class="el-icon-platform-eleme" style="color: #304095; margin-right: 5px;"></i>爬虫数据一览
+          <i class="el-icon-platform-eleme" style="color: #304095; margin-right: 5px;"></i>万物皆可爬
         </h2>
         <form action="">
           <div class="login-input">
@@ -11,14 +11,14 @@
               <i class="el-icon-message" style="font-size: 16px;"></i>
               <span>邮箱</span>
             </p>
-            <input type="text" placeholder="请输入登录邮箱">
+            <input type="text" placeholder="请输入登录邮箱" value="751670441@qq.com">
           </div>
           <div class="login-input">
             <p>
               <i class="el-icon-lock" style="font-size: 16px;"></i>
               <span>密码</span>
             </p>
-            <input type="text" placeholder="请输入登密码">
+            <input type="password" placeholder="请输入登密码" value="123456">
           </div>
           <router-link class="login-btn" to="/hotSpots" tag="div">登录</router-link>
         </form>

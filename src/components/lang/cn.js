@@ -2,7 +2,7 @@ import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 const cn = {
     // 公共模块
     common: {
-        managerTitle: "爬虫数据一览",
+        managerTitle: "万物皆可爬",
         loginEmailLabel:'用户名',
         loginPasswordLabel:'密码',
         changePassword: "修改密码",
@@ -26,11 +26,11 @@ const cn = {
         operate:'操作',
         hotSpotsName:'热门景点数据',
         xianHomeName:'西安城南小区监控',
-        roleManageName:'兰州招聘数据',
-        operatorManageName:'建设中',
-        deviceManageName:'建设中',
-        AppManegeName:'建设中',
-        TaskManageName:'建设中',
+        employName:'兰州招聘数据',
+        schedulerManageName:'调度任务管理',
+        examName:'人社厅考试信息',
+        AppManegeName:'< 可扩展 >',
+        LogName:'开发日志',
         tableLimitAllocate:'权限配置',
         tableAddBtn:'添加',
         tableUpdateBtn:'修改',

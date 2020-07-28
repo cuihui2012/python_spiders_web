@@ -114,7 +114,7 @@ export default {
       var times = [];
       var prices = [];
       if (results.length > 0) {
-        for (var i = 0; i < results.length; i++) {
+        for (var i = results.length-1; i >= 0; i--) {
           times.push(results[i]["create_time"]);
           prices.push(results[i]["price"]);
         }
